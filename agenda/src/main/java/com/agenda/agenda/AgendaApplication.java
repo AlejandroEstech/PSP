@@ -1,13 +1,13 @@
-package com.example.agendados;
+package com.agenda.agenda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AgendadosApplication {
+public class AgendaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AgendadosApplication.class, args);
+		SpringApplication.run(AgendaApplication.class, args);
 	}
 
 }

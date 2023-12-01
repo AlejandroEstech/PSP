@@ -1,4 +1,4 @@
-package com.example.agendados.model;
+package com.agenda.agenda.model;
 
 import jakarta.persistence.*;
 
@@ -13,10 +13,7 @@ public class Contacto {
     private String apellido;
     private Integer telefono;
 
-
-    public Contacto(){
-
-    }
+    public Contacto(){}
 
     public Contacto(Long id, String nombre, String apellido, Integer telefono) {
         this.id = id;
@@ -49,7 +46,7 @@ public class Contacto {
         this.apellido = apellido;
     }
 
-    public Integer getTelefono() {
+    public Integer  getTelefono() {
         return telefono;
     }
 
