@@ -31,12 +31,14 @@ public class ContactoController {
     private UpdateService updateService;
 
 
+    // GUARDAR CONTACTO
     @PostMapping
     public ResponseEntity<Map<String,Object>>  save(@RequestBody Contacto contacto) {
         ResponseEntity<Map<String, Object>> response  =  contactoService.gurdarContacto(contacto);
         return response;
     }
 
+    //LISTAR CONTACTOS
     @GetMapping
     public ResponseEntity<Map<String,Object>> list(){
         ResponseEntity<Map<String,Object>> response = contactoService.listaContactos();
@@ -50,12 +52,22 @@ public class ContactoController {
         return response;
     }
 
+
+    // BUSCAR CONTACTO POR NOMBRE
     @GetMapping("/{nombre}")
     public ResponseEntity<Map<String,Object>> show(@PathVariable String nombre){
         Map<String,Object> mapa = new HashMap<>();
         ResponseEntity<Map<String,Object>> response = contactoService.buscarPorNombre(nombre);
         return response;
     }
+
+    //MODIFICAR CONTACTO
+    @PutMapping("{id}")
+    public ResponseEntity<Map<String,Object>>  update(@PathVariable Long id, @RequestBody Contacto contacto) {
+        ResponseEntity<Map<String, Object>> response  =  updateService.modificarContacto(contacto,id);
+        return response;
+    }
+
 
 
 }
