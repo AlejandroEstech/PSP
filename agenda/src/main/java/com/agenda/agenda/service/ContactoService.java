@@ -89,4 +89,19 @@ public class ContactoService{
         return new ResponseEntity<>(mapa, HttpStatus.OK);
     }
 
+    public ResponseEntity<Map<String,Object>> buscarPorId(Long id){
+
+        Map<String,Object> mapa= new HashMap<>();
+
+        Contacto contacto = contactoRepository.findById(id).orElse(null);
+
+        if(contacto == null){
+            mapa.put("NotFound", 703);
+            return new ResponseEntity<>(mapa, HttpStatus.NOT_FOUND);
+        }else{
+            mapa.put("success",contacto);
+        }
+        return new ResponseEntity<>(mapa, HttpStatus.OK);
+    }
+
 }

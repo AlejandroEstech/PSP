@@ -70,6 +70,13 @@ public class ContactoController {
         return response;
     }
 
+    // BUSCAR POR ID
+    @GetMapping("/by-id/{id}")
+    public ResponseEntity<Map<String,Object>>  showById(@PathVariable Long id) {
+        ResponseEntity<Map<String, Object>> response  =  contactoService.buscarPorId(id);
+        return response;
+    }
+
 
 
 }
